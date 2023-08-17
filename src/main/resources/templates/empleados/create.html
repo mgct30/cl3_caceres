@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:cadetblue">
+
+    <div class="row" style="text-align:center">
+        <div class="col-md-4">
+      
+    <h1 style="text-align:center;color:navy">Registrar Empleado</h1>
+    <form th:action="@{/empleados}" method="post" th:object="${empleadoForm}">
+        <div>
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" th:field="*{nombre}">
+            <!-- data binding -->
+        </div>
+        <div>
+            <label for="apellido">Apellido</label>
+            <input id="apellido" type="text" th:field="*{apellido}">
+        </div>
+        <div>
+            <label for="salario">Salario</label>
+            <input id="salario" type="number" th:field="*{salario}">
+        </div>
+        <div>
+            <label for="puesto">Puesto</label>
+            <input id="puesto" type="text" th:field="*{puesto}">
+        </div>
+        <div>
+            <label for="fechaRegistro">fechaRegistro</label>
+            <input id="fechaRegistro" type="datetime-local" th:field="*{fechaRegistro}">
+        </div>
+
+
+
+
+
+
+        <button>Registrar</button>
+    </form>
+</div>
+</div>
+
+    
+</body>
+</html>
