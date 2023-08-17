@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(titulo)">
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title th:replace="${titulo}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">-->
+</head>
+<body>
+    <div th:fragment="header">
+        <a th:href="@{/}">Inicio</a>
+        <a th:href="@{/empleados}">Nosotros</a>
+
+
+        <div sec:authorize="!isAuthenticated()">
+            <a th:href="@{/login}">Login</a>
+            <a th:href="@{/registrar}">Registrate!</a>
+        </div>
+
+        <div sec:authorize="isAuthenticated()">
+            <form th:action="@{/logout}" method="post">
+                <button>Logout</button>
+            </form>
+        </div>
+    </div>
+    <div th:fragment="footer">
+        <footer>
+            Copyright © <span th:text="${year}"></span>
+        </footer>
+    </div>
+    <br><br>
+    <div th:fragment="publicidad">
+        <p>CL3 EMPRESA DE TI ACCEDE AHORA!</p>
+    </div>
+</body>
+</html>

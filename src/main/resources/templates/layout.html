@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="base(titulo, contenido)">
+<head th:insert="~{fragments :: head(${titulo})}">
+</head>
+<body>
+
+    <div class="row" style="text-align:center">
+        <div class="col-md-4">
+
+    <div th:insert="~{fragments :: header}"></div>
+    <div th:insert="~{fragments :: publicidad}"></div>
+    <main th:insert="${contenido}"></main>
+    <div th:insert="~{fragments :: footer}"></div>
+
+</div>
+</div>
+</body>
+</html>
