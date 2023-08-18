@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:insert="~{layout :: base(~{::title}, ~{::body})}">
+<head>
+    <title>Empleados</title>
+</head>
+<body style="background-color:cadetblue">
+
+    <div class="row" style="text-align:center">
+        <div class="col-md-4">
+      
+
+
+    <h1 style="text-align:center;color:navy">Empleados</h1>
+    <a th:href="@{/empleados/create}">Registra nuevo empleado</a>
+    <br>
+    <a th:href="@{/empleados/reporte}">Descargar Reporte</a>
+
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Salario</td>
+                <td>Puesto</td>
+                <td>fechaRegistro</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="empleado : ${listaEmpleados}">
+                <td th:text="${empleado.id}"></td>
+                <td th:text="${empleado.nombre}"></td>
+                <td th:text="${empleado.apellido}"></td>
+                <td th:text="${empleado.salario}"></td>
+                <td th:text="${empleado.puesto}"></td>
+                <td th:text="${empleado.fechaRegistro}"></td>
+
+                <td>
+                    <a th:href="@{/empleados/{id}(id=${empleado.id})}">Ver detalle</a>
+                </td>
+                <td>
+                    <a th:href="@{/empleados/{id}/edit(id=${empleado.id})}">Editar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+</div>
+</body>
+</html>

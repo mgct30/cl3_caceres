@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Empleado</title>
+</head>
+<body style="background-color:cadetblue">
+
+    <div class="row" style="text-align:center">
+        <div class="col-md-4">
+      
+    <h1 style="text-align:center;color:navy"> Detalle Empleado</h1>
+    <p>Empleado: <span th:text="${empleado.nombre}"></span> <span th:text="${empleado.apellido}"></span></p>
+    <p>Salario: <span th:text="${empleado.salario}"></span></p>
+    <p>Puesto: <span th:text="${empleado.puesto}"></span></p>
+    <p>Fecha de Registro: <span th:text="${#dates.format(empleado.fechaRegistro, 'dd-MM-yyyy HH:mm:ss')}"></span></p>
+</div>
+</div>
+</body>
+</html>

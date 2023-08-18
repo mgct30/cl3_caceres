@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Empleado</title>
+</head>
+<body style="background-color:cadetblue">
+
+    <div class="row" style="text-align:center">
+        <div class="col-md-4">
+
+    <form th:action="@{/empleados/{id}(id=${empleado.id})}" method="post" th:object="${empleado}">
+        <h1 style="text-align:center;color:navy">Editar Empleado</h1>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" th:field="*{nombre}">
+        <label for="apellido">Apellido</label>
+        <input id="apellido" type="text" th:field="*{apellido}">
+        <label for="salario">Salario</label>
+        <input id="salario" type="number" step="0.5" th:field="*{salario}">
+        <label for="puesto">Puesto</label>
+        <input id="puesto" type="text" th:field="*{puesto}">
+        <button>Guardar</button>
+    </form>
+
+    </div>
+</div>
+</body>
+</html>
